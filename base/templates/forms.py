@@ -4,3 +4,4 @@ class CadastrerForm(forms.ModelForm):
     class Meta:
         model = Cadastrer
         fields = ['name', 'email', 'senha']
+        widgets = {'senha': forms.PasswordInput()}

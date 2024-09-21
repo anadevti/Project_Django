@@ -14,3 +14,12 @@ python manage.py runserver
 ```bash
 python manage.py startapp nome_da_app
 ```
+
+### Sempre que algo for alterado no db:
+```bash
+python manage.py makemigrations
+```
+e o:
+```bash
+python manage.py migrate
+```
