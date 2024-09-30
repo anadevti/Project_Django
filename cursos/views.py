@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from cursos.forms import CourseForm
-# Create your views here.
+from cursos.models import Curso
+from django.views.decorators.cache import cache_page
 
+@cache_page(30)
 def create_course(request):
+    courses = Curso.objects.all()
     form = CourseForm(request.POST or None)
     success = False
     if form.is_valid():
@@ -10,6 +13,7 @@ def create_course(request):
         success = True
     context = {
         'form': form,
-        'sucesss': success
+        'sucesss': success,
+        'courses': courses
         }
     return render(request, 'form.html', context)

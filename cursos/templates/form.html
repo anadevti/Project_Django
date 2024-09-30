@@ -6,7 +6,7 @@
 
 {% if success %}
     <div class="alert alert-success" role="alert">
-        Cruso Cadastrado com sucesso!
+        Curso Cadastrado com sucesso!
     </div>
 {% else %}
   <form action="" method="POST" id="form">
@@ -15,5 +15,16 @@
 
     <button type="submit" class="btn btn-primary btn-block">Inserir Curso</button>
   </form>
+
+<h1> Cursos Cadastrados</h1> <br>
+{% for course in courses %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title
+            ">{{ course.title }}</h5>
+            <p class="card-text">{{ course.description }}</p>
+        </div>
+    </div>
+{% endfor %}
 {% endif %}
 {% endblock %}
