@@ -7,5 +7,6 @@ urlpatterns = [
     path('', init),  # se eu nao coloco nada na url, ele chama a função init (atribuindo a url vazia como index)
     path('cadastrer/', cadastrer),  # se eu coloco /init na url, ele chama a função init
     path('course/', include('cursos.urls', namespace='courses')),
-    path('api-auth/', include('rest_framework.urls'))
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/', include('rest_api.urls', namespace='rest_api'))
 ]
